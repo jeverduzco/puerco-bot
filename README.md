@@ -39,7 +39,7 @@ Una vez iniciado el bot, se generará un código QR en la terminal que deberás 
 
 ## Uso
 
-Para utilizar Puerco Bot, simplemente dile a un contacto de en WhatsApp que te envie un mensaje que empiece con #. El bot procesará el mensaje y responderá automáticamente utilizando la inteligencia artificial de OpenAI.
+Para utilizar Puerco Bot, simplemente dile a un contacto en WhatsApp que te envie un mensaje que empiece con #. El bot procesará el mensaje y responderá automáticamente utilizando la inteligencia artificial de OpenAI.
 
 ## Contribuciones
 
