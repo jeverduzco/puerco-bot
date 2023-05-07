@@ -37,6 +37,10 @@ node index.js
 ```
 Una vez iniciado el bot, se generará un código QR en la terminal que deberás escanear con tu dispositivo móvil para vincular tu cuenta de WhatsApp.
 
+## GPT-4
+
+Para usar GPT-4, debes cambiar la versión de la API de OpenAI en el archivo `index.js`. Para ello, cambia en la línea 54 de `gpt-3.5-turbo` a `gpt-4`.
+
 ## Uso
 
 Para utilizar Puerco Bot, simplemente dile a un contacto en WhatsApp que te envie un mensaje que empiece con `#`, por ejemplo `#hola`. El bot procesará el mensaje y responderá automáticamente utilizando la inteligencia artificial de OpenAI.
