@@ -20,21 +20,32 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-client.on('message', message => {
+const messageHistories = {};
+
+client.on('message', async (message) => {
     console.log(message.body);
 
     if (message.body.startsWith("#")) {
-        runCompletion(message.body.substring(1)).then(result => message.reply(result));
+        const senderId = message.from;
+        if (!messageHistories[senderId]) {
+            messageHistories[senderId] = [
+                { role: "system", content: "You are a very smart friend and answer everything in less than 200 characters." },
+            ];
+        }
+
+        messageHistories[senderId].push({ role: "user", content: message.body.substring(1) });
+
+        const reply = await runCompletion(messageHistories[senderId]);
+        message.reply(reply);
+
+        messageHistories[senderId].push({ role: "assistant", content: reply });
     }
 });
 
-async function runCompletion (message) {
+async function runCompletion (messages) {
     const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
-        messages: [
-            { role: "user", content: message },
-            { role: "system", content: "You are a very smart friend and answer everything in less than 200 characters." },
-        ],
+        messages: messages,
     });
     return completion.data.choices[0].message.content;
 }
