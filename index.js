@@ -27,18 +27,25 @@ client.on('message', async (message) => {
 
     if (message.body.startsWith("#")) {
         const senderId = message.from;
+        const userMessage = message.body.substring(1);
+
         if (!messageHistories[senderId]) {
             messageHistories[senderId] = [
                 { role: "system", content: "You are a very smart friend and answer everything in less than 200 characters." },
             ];
         }
 
-        messageHistories[senderId].push({ role: "user", content: message.body.substring(1) });
+        if (userMessage === "reset") {
+            delete messageHistories[senderId];
+            message.reply("The history has been deleted.");
+        } else {
+            messageHistories[senderId].push({ role: "user", content: userMessage });
 
-        const reply = await runCompletion(messageHistories[senderId]);
-        message.reply(reply);
+            const reply = await runCompletion(messageHistories[senderId]);
+            message.reply(reply);
 
-        messageHistories[senderId].push({ role: "assistant", content: reply });
+            messageHistories[senderId].push({ role: "assistant", content: reply });
+        }
     }
 });
 
