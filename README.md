@@ -45,6 +45,10 @@ Para utilizar Puerco Bot, simplemente dile a un contacto en WhatsApp que te envi
 
 Si deseas contribuir al proyecto, por favor crea una solicitud de extracción (pull request) con tus cambios y mejoras.
 
+## NOTA: 
+
+No puedo garantizar que no te bloqueen usando este método, aunque a mí me ha funcionado. WhatsApp no permite bots o clientes no oficiales en su plataforma, por lo que esto no debe considerarse totalmente seguro.
+
 ## Licencia
 
 Puerco Bot está licenciado bajo la licencia MIT. Consulta el archivo LICENSE para obtener más información.
