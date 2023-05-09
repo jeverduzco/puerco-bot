@@ -36,7 +36,7 @@ client.on('message', async (message) => {
 
         if (!messageHistories[senderId]) {
             messageHistories[senderId] = [
-                { role: "system", content: "You are a very smart friend and answer everything in less than 200 characters." },
+                { role: "system", content: process.env.OPENAI_API_ROLE },
             ];
         }
 

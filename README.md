@@ -28,12 +28,14 @@ Crear un archivo .env en la raíz del proyecto.
 touch .env
 ```
 
- Agregar la siguiente línea.
+ Agregar las siguientes líneas.
 ```bash
 OPENAI_API_KEY="your key here"
+OPENAI_API_ROLE="Your role here"
 ```
 
 Asegúrate de reemplazar `your key here` con tu clave API de OpenAI.
+Asegúrate de reemplazar `Your role here` con el rol que le quieras dar a tu bot.
 
 Construir la imagen de docker.
 ```bash
