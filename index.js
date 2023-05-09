@@ -3,25 +3,15 @@ const qrcode = require('qrcode-terminal');
 const { Configuration, OpenAIApi } = require("openai");
 require('dotenv').config()
 
-let sessionLocal = JSON.parse(process.env.WW_SESSION);
-console.log(sessionLocal);
-
-const puppeteerOptions = {
-    executablePath: '/usr/bin/google-chrome',
-    args: ['--disable-gpu', '--no-sandbox']
-};
-
 const client = new Client({
-    puppeteer: puppeteerOptions,
-    session: sessionLocal
+    puppeteer: {
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    }
 });
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
-});
-
-client.on('authenticated', session => {
-    console.log(JSON.stringify(session));
 });
 
 client.on('ready', () => {
