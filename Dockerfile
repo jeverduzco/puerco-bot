@@ -5,13 +5,10 @@ RUN apt-get update \
 
 WORKDIR /usr/src/app
 
-# Copia package.json y package-lock.json (si existe) al directorio de trabajo
 COPY package*.json ./
 
-# Ejecuta npm install para instalar las dependencias
 RUN npm install
 
-# Copia todos los archivos de tu directorio actual al contenedor
 COPY . .
 
 CMD ["node", "index.js"]
