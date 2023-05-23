@@ -26,8 +26,12 @@ Crear un archivo .env en la raíz del proyecto.
 touch .env
 ```
  Agregar la siguiente línea.
+ ```bash
+nano .env
+```
 ```bash
 OPENAI_API_KEY="your key here"
+OPENAI_API_ROLE="your bot role here"
 ```
 Asegúrate de reemplazar `your key here` con tu clave API de OpenAI.
 
