@@ -29,6 +29,9 @@ touch .env
 ```
 
  Agregar las siguientes líneas.
+ ```bash
+nano .env
+```
 ```bash
 OPENAI_API_KEY="your key here"
 OPENAI_API_ROLE="Your role here"
