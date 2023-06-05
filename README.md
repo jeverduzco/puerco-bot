@@ -56,6 +56,18 @@ Para poder visualizar el código deberás acceder a los logs del contenedor
 ```bash
 docker logs puerco-bot
 ```
+En el caso de que caduque la sesión, deberás volver a escanear el código QR.
+
+Para detener el bot y borrar el contenedor, ejecuta el siguiente comando:
+```bash
+docker rm —force puerco-bot
+```
+Eso puede ayudar si tienes problemas para iniciar el bot.
+
+Después puedes ejecutar de nuevo el comando para iniciar el bot.
+```bash
+docker run -d --name puerco-bot puerco-bot
+```
 
 ## GPT-4
 
